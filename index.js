@@ -4,9 +4,9 @@ var periodicityDays = [7, 30, 90, 365];
 function noOfPeriodInterval( startDate, endDate, periodicity ) {
   var a = moment(startDate, "DD.MM.YYYY");
   var b = moment(endDate, "DD.MM.YYYY");
-  var days = a.diff(b, 'days');
-  var intervals = 0;
-  intervals = parseInt(days) / periodicityDays[periodicity];
+  var days = b.diff(a, 'days');
+  var intervals = parseInt(days) / periodicityDays[periodicity];
+  console.log(intervals)
   return Math.ceil(intervals);
 }
 
